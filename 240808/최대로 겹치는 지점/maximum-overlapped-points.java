@@ -1,11 +1,10 @@
 import java.util.Scanner;
-import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int n = scanner.nextInt();
-        int[] events = new int[101]; // 1 <= x1 < x2 <= 100
+        int[] events = new int[102]; // 0 ~ 101 인덱스 사용 (1 <= x1 < x2 <= 100)
 
         for (int i = 0; i < n; i++) {
             int x1 = scanner.nextInt();
@@ -18,7 +17,7 @@ public class Main {
         int maxOverlap = 0;
         int currentOverlap = 0;
 
-        for (int i = 0; i < 101; i++) {
+        for (int i = 1; i < 101; i++) { // 1 ~ 100 까지 순회
             currentOverlap += events[i];
             if (currentOverlap > maxOverlap) {
                 maxOverlap = currentOverlap;
